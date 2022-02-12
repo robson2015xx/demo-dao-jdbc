@@ -1,18 +1,14 @@
 package application;
 
-import java.util.Date;
-import java.util.List;
-
 import model.dao.DaoFactory;
-import model.dao.SellerDao;
+import model.dao.DepartmentDao;
 import model.entities.Department;
-import model.entities.Seller;
 
 public class Program {
 
 	public static void main(String[] args) {
 		
-		SellerDao sellerDao = DaoFactory.createSellerDao(); 
+		/* SellerDao sellerDao = DaoFactory.createSellerDao(); 
 		Seller seller = sellerDao.findById(3); //find by ID
 		System.out.println(seller);	
 		
@@ -41,7 +37,17 @@ public class Program {
 		
 		sellerDao.DeleteById(13);
 		
-		System.out.println("Delete! Remain:\n" + sellerDao.findAll());
+		System.out.println("Delete! Remain:\n" + sellerDao.findAll()); */
+		
+		// DEPARTMENT DAO
+		
+		DepartmentDao departmentDao= DaoFactory.createDepartmentDao();
+		
+		Department newDepartment = new Department(5, "Musics");
+		
+		Department dep = departmentDao.findById(2);
+		
+		System.out.println("Find! " + departmentDao.findAll());
 	}
 
 }
