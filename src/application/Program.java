@@ -37,8 +37,11 @@ public class Program {
 		newSeller.setName("Gregorio");
 		sellerDao.update(newSeller);
 		
-		System.out.println("Updated: " + newSeller);
-
+		System.out.println("Updated: " + newSeller); //Update seller
+		
+		sellerDao.DeleteById(13);
+		
+		System.out.println("Delete! Remain:\n" + sellerDao.findAll());
 	}
 
 }
